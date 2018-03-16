@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Route::get('/', 'HomeController@index')->name('home.index');
+Route::get('/movies', 'MovieController@index')->name('movies.index');
 
 Route::get('/', function () {
     return view('welcome');
