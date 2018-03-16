@@ -14,7 +14,8 @@ class MovieController extends Controller
      */
     public function index()
     {
-        //
+        $movies = Movie::get();
+        return view('movies/index', ['movies' => $movies]);
     }
 
     /**
@@ -44,9 +45,10 @@ class MovieController extends Controller
      * @param  \App\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function show(Movie $movie)
+    public function show($id)
     {
-        //
+        $movie = Movie::find($id);
+        return view('movies/show', ['movie' => $movie]);
     }
 
     /**
