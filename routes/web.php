@@ -18,3 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/movies', 'MovieController@index')->name('movies.index');
+
+Route::get('/genres', 'GenreController@index')->name('genres.index');
+Route::get('/genres/{genre}', 'GenreController@show')->name('genres.show');
