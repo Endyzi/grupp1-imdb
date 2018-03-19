@@ -9,9 +9,9 @@
 			<input type="text" class="form-control" id="genre" namn="genre" placeholder="Lägg till genre">
 
 		</div>
-		
+
 		<button type="submit" class="btn btn-primary">Lägg till</button>
 	</form>
 </div>
 
-@endsection
+@endsection 

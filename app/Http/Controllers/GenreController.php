@@ -36,7 +36,11 @@ class GenreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $genre = new Genre();
+        $genre->name = $request->input('genre');
+        $genre->save();
+
+        return redirect()->route('genres.index'); /** länkar till filen index.blade.php i filen genres */
     }
 
     /**
