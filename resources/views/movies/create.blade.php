@@ -15,6 +15,12 @@
 			<input type="date" class="form-control" id="releasedate" name="releasedate" placeholder="Lägg Till releasedate">
 			<label for="movie">Film Längd</label>
 			<input type="text" class="form-control" id="length" name="length" placeholder="Lägg Till Film-längd">
+			<label for="movie">Director</label>
+			<select class="form-control" id="director" name="director" placeholder="Lägg Till Director">
+				@foreach ($directors as $director)
+    			<option value="{{ $director->id }}">{{ $director->name }}</option>
+				@endforeach
+			</select>
 
 		</div>
 
