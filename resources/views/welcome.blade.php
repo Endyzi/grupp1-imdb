@@ -83,9 +83,9 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
+                    <a href="https://en.wikipedia.org/wiki/List_of_Marvel_Cinematic_Universe_films">Movies</a>
+                    <a href="https://en.wikipedia.org/wiki/List_of_genres">Genres</a>
+                    <a href="https://www.imdb.com/list/ls069529378/">Directors</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
