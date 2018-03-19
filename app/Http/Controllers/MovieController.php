@@ -25,7 +25,7 @@ class MovieController extends Controller
      */
     public function create()
     {
-        //
+        return view('movies.create');   //
     }
 
     /**
@@ -36,7 +36,15 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $movie = new Movie();
+        $movie->titel = $request->input('movie');
+        $movie->description = $request->input('description');
+        $movie->releasedate = $request->input('releasedate');
+        $movie->length = $request->input('length');
+
+        $movie->save();
+
+        return redirect()->route('movies.index'); /** länkar till filen index.blade.php i filen genres */
     }
 
     /**
