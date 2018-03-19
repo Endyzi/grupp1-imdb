@@ -13,7 +13,7 @@
 Auth::routes();
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('home'); // när man går in till root-adressen (bara "/") så skicka vidare besökaren till "/home"
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
