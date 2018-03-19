@@ -10,7 +10,7 @@ class Movie extends Model
     	return $this->hasMany('App\Actor');
     }
     public function Genres() {
-    	return $this->hasMany('App\Genre');
+    	return $this->belongsToMany('App\Genre');
     }
     public function Ratings() {
     	return $this->hasMany('App\Rating');

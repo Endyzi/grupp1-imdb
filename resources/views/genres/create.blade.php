@@ -7,7 +7,7 @@
 		@csrf  <!-- Skydd mot utanifrån kan skicka in data i vårt formulär -->
 
 		<div class="form-group">
-			<label for="genre">Genrenamn</label>
+			<label for="genre">Genre namn</label>
 			<input type="text" class="form-control" id="genre" name="genre" placeholder="Lägg till genre">
 
 		</div>

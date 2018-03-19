@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Movie;
 use App\Director;
+use App\Genre;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
@@ -26,7 +27,10 @@ class MovieController extends Controller
      */
     public function create()
     {
-        return view('movies.create', ['directors' => Director::orderBy('name')->get()]);   //
+        return view('movies.create', [
+            'directors' => Director::orderBy('name')->get(),
+            'genres' => Genre::orderBy('name')->get()
+        ]);   //
     }
 
     /**
@@ -37,6 +41,7 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request->all());
         $movie = new Movie();
         $movie->titel = $request->input('movie');
         $movie->description = $request->input('description');
@@ -45,6 +50,10 @@ class MovieController extends Controller
         $movie->director_id = $request->input('director');
 
         $movie->save();
+
+        foreach ($request->input('genre') as $genre_id) {
+            $movie->genres()->attach($genre_id);
+        }
 
         return redirect()->route('movies.index'); /** länkar till filen index.blade.php i filen genres */
     }

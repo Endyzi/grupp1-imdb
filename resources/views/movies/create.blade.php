@@ -21,6 +21,12 @@
     			<option value="{{ $director->id }}">{{ $director->name }}</option>
 				@endforeach
 			</select>
+			<label for="movie">Genres</label>
+			<select class="form-control" id="genre" name="genre[]" multiple placeholder="Lägg Till Genre">
+				@foreach ($genres as $genre)
+    			<option value="{{ $genre->id }}">{{ $genre->name }}</option>
+				@endforeach
+			</select>
 
 		</div>
 
