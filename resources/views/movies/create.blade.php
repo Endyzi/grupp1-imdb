@@ -2,22 +2,22 @@
 @section('content')
 
 
-<div clas="container">
+<div class="container">
 	<form method="POST" action="{{ route('movies.store') }}">
 		@csrf  <!-- Skydd mot utanifrån kan skicka in data i vårt formulär -->
 
 		<div class="form-group">
-			<label for="movie">Film Namn</label>
+			<label for="movie">Titel</label>
 			<input type="text" class="form-control" id="movie" name="movie" placeholder="Lägg Till Film namn">
-			<label for="movie">Film Beskrivning</label>
+			<label for="movie">Beskrivning</label>
 			<input type="text" class="form-control" id="description" name="description" placeholder="Lägg Till beskrivning">
-			<label for="movie">Film Releasedate</label>
+			<label for="movie">Releasedate</label>
 			<input type="date" class="form-control" id="releasedate" name="releasedate" placeholder="Lägg Till releasedate">
-			<label for="movie">Film Längd</label>
+			<label for="movie">Filmens Längd</label>
 			<input type="text" class="form-control" id="length" name="length" placeholder="Lägg Till Film-längd">
 			<label for="movie">Film Cover Url</label>
 			<input type="text" class="form-control" id="cover_url" name="cover_url" placeholder="Lägg Till Cover-Url">
-			<label for="movie">Director</label>
+			<label for="movie">Regissör</label>
 			<select class="form-control" id="director" name="director" placeholder="Lägg Till Director">
 				@foreach ($directors as $director)
     			<option value="{{ $director->id }}">{{ $director->name }}</option>
@@ -33,7 +33,9 @@
 		</div>
 
 		<button type="submit" class="btn btn-primary">Lägg till</button>
+		<br><br>
+		<a href="{{ route ('home') }}" class="btn btn-success">Tillbaka</a>
 	</form>
 </div>
 
-@endsection 
+@endsection
