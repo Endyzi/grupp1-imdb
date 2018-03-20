@@ -11,9 +11,9 @@
 
 		@endforeach
 	</ul>
-	<a href="{{ route('directors.create') }}" class="btn btn-primary">Lägg till ny director</a> {{-- btn btn-primary är en bootstrapklass för att färgsätta knappen till blå från grå --}}
+	<a href="{{ route('directors.create') }}" class="btn btn-primary">Add new director</a> {{-- btn btn-primary är en bootstrapklass för att färgsätta knappen till blå från grå --}}
 	<br><br>
-	<a href="{{ route ('home') }}" class="btn btn-success">Tillbaka</a>
+	<a href="{{ route ('home') }}" class="btn btn-success">Back</a>
 </div>
 
 @endsection

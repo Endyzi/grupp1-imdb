@@ -6,7 +6,7 @@
       @csrf
       <div class="form-group">
         <label for="genre">Actor</label>
-        <input type="text" class="form-control" id="actor" name="actor" value="{{ $actor->name }}" placeholder="edit actor">
+        <input type="text" class="form-control" id="actor" name="actor" value="{{ $actor->name }}" placeholder="Edit actor">
       </div>
       <button type="submit" class="btn btn-secondary">Change</button>
     </form>

@@ -5,10 +5,10 @@
     <form method="POST" action="{{ route('directors.update', ['director' => $director->id]) }}">
       @csrf
       <div class="form-group">
-        <label for="genre">Director namn</label>
-        <input type="text" class="form-control" id="director" name="director" value="{{ $director->name }}" placeholder="editera director">
+        <label for="genre">Director</label>
+        <input type="text" class="form-control" id="director" name="director" value="{{ $director->name }}" placeholder="Add director">
       </div>
-      <button type="submit" class="btn btn-secondary">Ändra</button>
+      <button type="submit" class="btn btn-secondary">Change</button>
     </form>
 </div>
 

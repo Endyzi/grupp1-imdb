@@ -19,9 +19,9 @@
 		@endforeach
 		</div>
 	<br><br>
-	<a href="{{ route('movies.create') }}" class="btn btn-primary">Lägg till ny film</a> {{-- btn btn-primary är en bootstrapklass för att färgsätta knappen till blå från grå --}}
+	<a href="{{ route('movies.create') }}" class="btn btn-primary">Add new movie</a> {{-- btn btn-primary är en bootstrapklass för att färgsätta knappen till blå från grå --}}
   <br><br>
-  <a href="{{ route ('home') }}" class="btn btn-success">Tillbaka</a>
+  <a href="{{ route ('home') }}" class="btn btn-success">Back</a>
 </div>
 
 @endsection

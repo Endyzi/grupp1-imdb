@@ -9,7 +9,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
+        <link type="stylesheet" css="{{ asset('css/style.css') }}" />
         <!-- Styles -->
         <style>
             html, body {

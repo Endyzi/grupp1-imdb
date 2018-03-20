@@ -3,7 +3,7 @@
 
 <div class="container">
 
-<h1>Genrer:</h1>
+<h1>Genrer</h1>
 	<ul class="list-group">
 
 		@foreach($genres as $genre)
@@ -11,9 +11,9 @@
 
 		@endforeach
 	</ul>
-	<a href="{{ route('genres.create') }}" class="btn btn-primary">Lägg till ny genre</a> {{-- btn btn-primary är en bootstrapklass för att färgsätta knappen till blå från grå --}}
+	<a href="{{ route('genres.create') }}" class="btn btn-primary">Add new genre</a> {{-- btn btn-primary är en bootstrapklass för att färgsätta knappen till blå från grå --}}
 	<br><br>
-	<a href="{{ route ('home') }}" class="btn btn-success">Tillbaka</a>
+	<a href="{{ route ('home') }}" class="btn btn-success">Back</a>
 </div>
 
 

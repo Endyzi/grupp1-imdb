@@ -8,11 +8,13 @@
 
 		<div class="form-group">
 			<label for="actor">Actor</label>
-			<input type="text" class="form-control" id="actor" name="actor" placeholder="Lägg Till Film namn">
+			<input type="text" class="form-control" id="actor" name="actor" placeholder="Name">
 
 		</div>
 
-		<button type="submit" class="btn btn-primary">Lägg till</button>
+		<button type="submit" class="btn btn-primary">Add</button>
+		<br><br>
+		<a href="{{ route ('actors.index') }}" class="btn btn-success">Back</a>
 	</form>
 </div>
 @endsection
