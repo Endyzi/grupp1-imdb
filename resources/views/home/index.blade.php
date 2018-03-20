@@ -10,6 +10,8 @@
   <a href="{{ route ('genres.index') }}">Genres</a>
   <br><br>
   <a href="{{ route ('directors.index') }}">Directors</a>
+  <br><br>
+  <a href="{{ route ('actors.index') }}">Actors</a>
 </div>
 
 @endsection

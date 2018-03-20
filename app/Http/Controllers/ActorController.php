@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Actor;
 use Illuminate\Http\Request;
 
 class ActorController extends Controller
@@ -13,7 +14,7 @@ class ActorController extends Controller
      */
     public function index()
     {
-        //
+      return view('actors/index', ['actors' => Actor::get()]);
     }
 
     /**
@@ -23,7 +24,7 @@ class ActorController extends Controller
      */
     public function create()
     {
-        //
+        return view('actors.create');
     }
 
     /**
@@ -34,7 +35,11 @@ class ActorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $actor = new Actor();
+      $actor->name = $request->input('actor');
+      $actor->save();
+
+      return redirect()->route('actors.index'); /** länkar till filen index.blade.php i filen actors */
     }
 
     /**
@@ -43,9 +48,9 @@ class ActorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Actor $actor)
     {
-        //
+        return view('actors/show', ['actor' => $actor]);
     }
 
     /**
@@ -56,7 +61,8 @@ class ActorController extends Controller
      */
     public function edit($id)
     {
-        //
+      $actor = Actor::find($id);
+      return view('actors/edit', ['actor' => $actor]);
     }
 
     /**
@@ -68,7 +74,11 @@ class ActorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $actor=Actor::findOrFail($id); // Kollar i fall Genren finns i databasen, annars avbryt!
+      $actor->name = $request->input('actor');
+      $actor->save();
+
+      return redirect('actors');
     }
 
     /**

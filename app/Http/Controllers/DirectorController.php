@@ -39,7 +39,7 @@ class DirectorController extends Controller
         $director->name = $request->input('director');
         $director->save();
 
-        return redirect()->route('directors.index'); /** länkar till filen index.blade.php i filen genres */
+        return redirect()->route('directors.index'); /** länkar till filen index.blade.php i filen directors */
     }
 
     /**
