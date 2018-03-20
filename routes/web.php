@@ -33,4 +33,15 @@ Route::get('/genres/{genre}', 'GenreController@show')->name('genres.show');
 Route::get('/directors', 'DirectorController@index')->name('directors.index');
 Route::get('/directors/create', 'DirectorController@create')->name('directors.create');
 Route::post('/directors', 'DirectorController@store')->name('directors.store');
+Route::get('/directors/{director}/edit', 'DirectorController@edit')->name('directors.edit');
+Route::post('/directors/{director}', 'DirectorController@update')->name('directors.update');
 Route::get('/directors/{director}', 'DirectorController@show')->name('directors.show');
+
+/*
+Route::get('/directors', 'DirectorController@index')->name('directors.index');
+Route::get('/directors/create', 'DirectorController@create')->name('directors.create');
+Route::post('/directors', 'DirectorController@store')->name('directors.store');
+Route::get('/directors/{director}/edit', 'DirectorController@show')->name('directors.edit');
+Route::post('/directors/{director}', 'DirectorController@show')->name('directors.update');
+Route::get('/directors/{director}', 'DirectorController@show')->name('directors.show');
+*/
