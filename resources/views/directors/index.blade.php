@@ -3,15 +3,17 @@
 
 <div class="container">
 
-<h1>Directors:</h1>
-	<ul>
+<h1>Directors</h1>
+	<ul class="list-group">
 
 		@foreach($directors as $director)
-		<li><a href="{{ route('directors.show', ['director' => $director->id]) }}">{{ $director->name }}</a></li>
+		<li class="list-group-item mb-3"><a href="{{ route('directors.show', ['director' => $director->id]) }}">{{ $director->name }}</a></li>
 
 		@endforeach
 	</ul>
 	<a href="{{ route('directors.create') }}" class="btn btn-primary">Lägg till ny director</a> {{-- btn btn-primary är en bootstrapklass för att färgsätta knappen till blå från grå --}}
+	<br><br>
+	<a href="{{ route ('home') }}" class="btn btn-success">Tillbaka</a>
 </div>
 
 @endsection
