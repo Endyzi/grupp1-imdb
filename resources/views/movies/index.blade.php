@@ -9,7 +9,7 @@
 		<div class="card col-sm" style="width: 18rem;">
 		  <img class="card-img-top" src="<?php if(strlen($movie->cover_url) > 0) echo $movie->cover_url ?>" alt="{{ $movie->titel }} Cover">
 		  <div class="card-body">
-		    <h5 class="card-title">{{ $movie->titel }}</h5>
+		    <h5 class="card-title"><?php echo $movie->titel . " - " . $movie->releasedate; if($movie->releasedate > date('Y-m-d')) {echo "(Upcomming)";} ?></h5>
 		    <p class="card-text">{{ $movie->description }}</p>
 		    <a class="btn btn-primary" href="{{ route('movies.show', ['movie' => $movie->id]) }}">More Info</a>
 		  </div>
