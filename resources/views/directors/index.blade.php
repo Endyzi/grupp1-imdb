@@ -3,7 +3,7 @@
 
 <div clas="container">
 
-<h1>Genrer:</h1>
+<h1>Directors:</h1>
 	<ul>
 
 		@foreach($directors as $director)
@@ -11,7 +11,7 @@
 
 		@endforeach
 	</ul>
-	<a href="{{ route('directors.create') }}" class="btn btn-primary">Lägg till ny genre</a> {{-- btn btn-primary är en bootstrapklass för att färgsätta knappen till blå från grå --}}
+	<a href="{{ route('directors.create') }}" class="btn btn-primary">Lägg till ny director</a> {{-- btn btn-primary är en bootstrapklass för att färgsätta knappen till blå från grå --}}
 </div>
 
 @endsection

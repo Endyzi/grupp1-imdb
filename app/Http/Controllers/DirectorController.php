@@ -24,7 +24,7 @@ class DirectorController extends Controller
      */
     public function create()
     {
-        //
+        return view('directors.create');
     }
 
     /**
@@ -35,7 +35,11 @@ class DirectorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $director = new Director();
+        $director->name = $request->input('director');
+        $director->save();
+
+        return redirect()->route('directors.index'); /** länkar till filen index.blade.php i filen genres */
     }
 
     /**
