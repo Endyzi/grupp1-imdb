@@ -50,7 +50,7 @@ class DirectorController extends Controller
      */
     public function show(Director $director)
     {
-        //
+         return view('directors/show', ['director' => $director]);
     }
 
     /**
@@ -59,9 +59,10 @@ class DirectorController extends Controller
      * @param  \App\Director  $director
      * @return \Illuminate\Http\Response
      */
-    public function edit(Director $director)
+    public function edit($id)
     {
-        //
+        $director = Director::find($id);
+        return view('directors/edit', ['director' => $director]);
     }
 
     /**
@@ -71,9 +72,13 @@ class DirectorController extends Controller
      * @param  \App\Director  $director
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Director $director)
+    public function update(Request $request, $id)
     {
-        //
+        $director=Director::findOrFail($id); // Kollar i fall Genren finns i databasen, annars avbryt!
+        $director->name = $request->input('director');
+        $director->save();
+
+        return redirect('directors');
     }
 
     /**
