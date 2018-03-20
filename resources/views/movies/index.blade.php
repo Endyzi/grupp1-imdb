@@ -7,7 +7,7 @@
 		<div class="row">
 		@foreach($movies as $movie)
 		<div class="card col-sm" style="width: 18rem;">
-		  <img class="card-img-top" src="..." alt="Card image cap">
+		  <img class="card-img-top" src="<?php if(strlen($movie->cover_url) > 0) echo $movie->cover_url ?>" alt="{{ $movie->titel }} Cover">
 		  <div class="card-body">
 		    <h5 class="card-title">{{ $movie->titel }}</h5>
 		    <p class="card-text">{{ $movie->description }}</p>

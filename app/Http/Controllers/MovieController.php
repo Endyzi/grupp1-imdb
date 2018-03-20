@@ -48,6 +48,7 @@ class MovieController extends Controller
         $movie->releasedate = $request->input('releasedate');
         $movie->length = $request->input('length');
         $movie->director_id = $request->input('director');
+        $movie->cover_url = $request->input('cover_url');
 
         $movie->save();
 

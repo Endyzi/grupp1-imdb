@@ -15,6 +15,8 @@
 			<input type="date" class="form-control" id="releasedate" name="releasedate" placeholder="Lägg Till releasedate">
 			<label for="movie">Film Längd</label>
 			<input type="text" class="form-control" id="length" name="length" placeholder="Lägg Till Film-längd">
+			<label for="movie">Film Cover Url</label>
+			<input type="text" class="form-control" id="cover_url" name="cover_url" placeholder="Lägg Till Cover-Url">
 			<label for="movie">Director</label>
 			<select class="form-control" id="director" name="director" placeholder="Lägg Till Director">
 				@foreach ($directors as $director)
