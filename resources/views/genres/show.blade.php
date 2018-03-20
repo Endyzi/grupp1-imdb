@@ -2,13 +2,8 @@
 @section('content')
 
 <div class="container">
-
-  <h1>Genre: {{ $genre->name }}</h1>
-
-  @foreach ($genre->$movies as $movie)
-    {{ $movie-titel}} <br> {{-- här står det titel eftersom alex skrev fel i databasen --}}
-  @endforeach
-
+  <h1>{{ $genre->name }}</h1>
+  <a href="{{ route('genres.edit', ['genre' => $genre->id]) }}"><button type="button" class="btn btn-primary">Ändra namn</button></a>
 </div>
 
 @endsection
