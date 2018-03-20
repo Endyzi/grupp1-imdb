@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<div clas="container">
+<div class="container">
 
 <h1>Directors:</h1>
 	<ul>

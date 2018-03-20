@@ -1,9 +1,10 @@
 @extends('layouts.app')
 @section('content')
 
-<div clas="container">
+<div class="container">
 
 <h1><?php echo $movie->titel; ?></h1>
+<br>
 		<div class="row">
 			<div class="card col-sm" style="width: 18rem;">
 			  <img class="card-img-top" src="<?php if(strlen($movie->cover_url) > 0) echo $movie->cover_url ?>" alt="{{ $movie->titel }} Cover">
@@ -14,6 +15,7 @@
 			</div>
 
 		</div>
+		<br><br>
 	<a href="{{ route ('movies.index') }}" class="btn btn-success">Tillbaka</a>
 
 

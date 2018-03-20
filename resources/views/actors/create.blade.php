@@ -2,7 +2,7 @@
 @section('content')
 
 
-<div clas="container">
+<div class="container">
 	<form method="POST" action="{{ route('movies.store') }}">
 		@csrf  <!-- Skydd mot utanifrån kan skicka in data i vårt formulär -->
 
@@ -34,4 +34,4 @@
 	</form>
 </div>
 
-@endsection 
+@endsection
