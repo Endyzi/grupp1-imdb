@@ -17,6 +17,7 @@
 			<input type="text" class="form-control" id="length" name="length" placeholder="Length">
 			<label for="movie">Cover Url</label>
 			<input type="text" class="form-control" id="cover_url" name="cover_url" placeholder="Add Cover-Url">
+			
 			<label for="movie">Director</label>
 			<select class="form-control" id="director" name="director" placeholder="Director">
 				@foreach ($directors as $director)

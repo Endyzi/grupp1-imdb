@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Movie;
 use App\Director;
 use App\Genre;
+use App\Actor;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
@@ -79,7 +80,7 @@ class MovieController extends Controller
      */
     public function edit(Movie $movie)
     {
-        return view('movies/edit', ['movie' => $movie, 'directors' => Director::get(), 'genres' => Genre::get()]);
+        return view('movies/edit', ['movie' => $movie, 'directors' => Director::get(), 'genres' => Genre::get(), 'actors' => Actor::get(), 'genres' => Genre::get()]);
     }
 
     /**
@@ -99,6 +100,7 @@ class MovieController extends Controller
         $movie->director_id = $request->input('director');
         $movie->save();
         $movie->genres()->sync($request->input('genres'));
+        $movie->actors()->sync($request->input('actors'));
 
         return redirect('movies');
     }
