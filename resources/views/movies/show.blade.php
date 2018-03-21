@@ -15,8 +15,8 @@
 			</div>
 
 		</div>
-		<br><br>
-	<a href="{{ route ('movies.index') }}" class="btn btn-success">Back</a>
+	<a href="{{ route('movies.edit', ['movie' => $movie->id]) }}"><button type="button" class="btn btn-primary">Editera Filmen</button></a>
+	<a href="{{ route ('movies.index') }}" class="btn btn-success">Tillbaka</a>
 
 
 </div>
