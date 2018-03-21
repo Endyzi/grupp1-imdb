@@ -11,6 +11,8 @@
 			  <div class="card-body">
 			    <h5 class="card-title"><?php echo "Release Date: " . $movie->releasedate; if($movie->releasedate > date('Y-m-d')) {echo "(Upcomming)";} ?></h5>
 			    <h2 class="card-text">{{ $movie->description }}</h2>
+			  	<p class="card-text">{{ $movie->length }}</p>
+			  	
 			  </div>
 			</div>
 
