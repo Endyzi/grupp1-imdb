@@ -77,13 +77,9 @@ class MovieController extends Controller
      * @param  \App\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Movie $movie)
     {
-        $movie = Movie::find($id);
-        $director = Director::where('id', '=', $movie->director_id);
-        $genres = Genre::where('movie_id', '=', $id);
-        return view('movies/edit', array('movie' => $movie,'director' => $director,'genres' => $genres));
-            //['movie' => $movie, 'director' => $director, 'genres' => $genres]);
+        return view('movies/edit', ['movie' => $movie, 'directors' => Director::get(), 'genres' => Genre::get()]);
     }
 
     /**
@@ -93,17 +89,16 @@ class MovieController extends Controller
      * @param  \App\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Movie $movie)
     {
-        $movie=Movie::findOrFail($id); // Kollar i fall Genren finns i databasen, annars avbryt!
-        $movie->name = $request->input('movie');
+        $movie->titel = $request->input('movie');
         $movie->description = $request->input('description');
         $movie->releasedate = $request->input('releasedate');
         $movie->length = $request->input('length');
         $movie->cover_url = $request->input('cover_url');
-        $movie->director = $request->input('director');
-        $movie->genre = $request->input('genre[]');
+        $movie->director_id = $request->input('director');
         $movie->save();
+        $movie->genres()->sync($request->input('genres'));
 
         return redirect('movies');
     }
