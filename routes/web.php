@@ -47,6 +47,10 @@ Route::get('/actors/{actor}/edit', 'ActorController@edit')->name('actors.edit');
 Route::post('/actors/{actor}', 'ActorController@update')->name('actors.update');
 Route::get('/actors/{actor}', 'ActorController@show')->name('actors.show');
 
+Route::post('/rate/movie/{movie}', 'RatingController@store')->name('ratings.store');
+
+Route::get('/users/{user}', 'UserController@show')->name('users.show');
+
 /*
 Route::get('/directors', 'DirectorController@index')->name('directors.index');
 Route::get('/directors/create', 'DirectorController@create')->name('directors.create');

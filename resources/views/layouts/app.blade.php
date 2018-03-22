@@ -42,6 +42,12 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
+                                @auth
+                                  <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('users.show', ['user' => Auth::user()->id])}}">Min profil</a>
+                                  </li>
+                                @endauth
+
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

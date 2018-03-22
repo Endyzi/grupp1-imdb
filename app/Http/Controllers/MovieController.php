@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Session;
 use App\Movie;
 use App\Director;
 use App\Genre;

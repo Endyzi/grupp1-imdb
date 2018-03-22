@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\Rating;
+use App\Movie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class UserController extends Controller
+
+class RatingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -33,29 +36,39 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Movie $movie, Request $request)
     {
-        //
+        $hasVoted = Rating::where('user_id', Auth::user()->id)->where('movie_id', $movie->id)->first();
+        if(!$hasVoted) {
+          $rating = new Rating();
+          $rating->rating = $request->input('rating');
+          $rating->user_id = Auth::user()->id;
+          $rating->movie_id = $movie->id;
+          $rating->save();
+        }
+
+        return redirect()->back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Rating  $rating
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(Rating $rating)
     {
-      return view('users.show', ['user' => $user]);
+      $ratings = Rating::find($rating);
+      return view('ratings/show', ['rating' => $ratings]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Rating  $rating
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Rating $rating)
     {
         //
     }
@@ -64,10 +77,10 @@ class UserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Rating  $rating
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Rating $rating)
     {
         //
     }
@@ -75,10 +88,10 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Rating  $rating
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Rating $rating)
     {
         //
     }

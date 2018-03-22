@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Movie extends Model
 {
     public function Actors() {
-    	return $this->hasMany('App\Actor');
+    	return $this->belongsToMany('App\Actor');
     }
     public function Genres() {
     	return $this->belongsToMany('App\Genre');
