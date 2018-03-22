@@ -13,7 +13,7 @@
 			    <h2 class="card-text">{{ $movie->description }}</h2>
 			  	<p class="card-text">{{ $movie->length }} min</p>
 
-					<h3>Actors</h3>
+				{{--	<h3>Actors</h3>
 					<ul>
 						@foreach($movie->actors as $actor)
 							<li>{{ $actor->name }}</li>
@@ -25,7 +25,7 @@
 						@foreach($movie->genres as $genre)
 							<li>{{ $genre->name }}</li>
 						@endforeach
-					</ul>
+					</ul> --}}
 
 
 			  </div>
