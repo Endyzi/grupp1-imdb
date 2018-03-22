@@ -102,7 +102,7 @@ class MovieController extends Controller
         $movie->genres()->sync($request->input('genres'));
         $movie->actors()->sync($request->input('actors'));
 
-        return redirect('movies');
+        return redirect()->route('movies.show', ['movie' => $movie->id]);
     }
 
     /**

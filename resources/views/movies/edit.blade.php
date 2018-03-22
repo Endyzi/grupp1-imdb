@@ -40,9 +40,9 @@
 			<select class="form-control" id="actor" name="actors[]" multiple placeholder="Lägg Till Actor">
 			@foreach ($actors as $actor)
 				@if($movie->actors->contains($actor->id))
-					<option selected value="{{-- $actor->id --}}">{{-- $actor->name --}}</option>
+					<option selected value="{{ $actor->id }}">{{ $actor->name }}</option>
 				@else
-	    			<option value="{{-- $actor->id --}}">{{-- $actor->name --}}</option>
+	    			<option value="{{ $actor->id }}">{{ $actor->name }}</option>
 	    		@endif
 			@endforeach
 			</select>
@@ -50,8 +50,8 @@
 
 		</div>
 
-		<button type="submit" class="btn btn-primary">Ändra</button>
+		<button type="submit" class="btn btn-primary">Change</button>
 	</form>
 </div>
 
-@endsection 
+@endsection

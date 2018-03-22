@@ -11,14 +11,31 @@
 			  <div class="card-body">
 			    <h5 class="card-title"><?php echo "Release Date: " . $movie->releasedate; if($movie->releasedate > date('Y-m-d')) {echo "(Upcomming)";} ?></h5>
 			    <h2 class="card-text">{{ $movie->description }}</h2>
-			  	<p class="card-text">{{ $movie->length }}</p>
-			  	
+			  	<p class="card-text">{{ $movie->length }} min</p>
+
+					<h3>Actors</h3>
+					<ul>
+						@foreach($movie->actors as $actor)
+							<li>{{ $actor->name }}</li>
+						@endforeach
+					</ul>
+
+					<h3>Genres</h3>
+					<ul>
+						@foreach($movie->genres as $genre)
+							<li>{{ $genre->name }}</li>
+						@endforeach
+					</ul>
+
+
 			  </div>
 			</div>
 
 		</div>
-	<a href="{{ route('movies.edit', ['movie' => $movie->id]) }}"><button type="button" class="btn btn-primary">Editera Filmen</button></a>
-	<a href="{{ route ('movies.index') }}" class="btn btn-success">Tillbaka</a>
+		<br>
+			<a href="{{ route('movies.edit', ['movie' => $movie->id]) }}"><button type="button" class="btn btn-primary">Change</button></a>
+		<br><br>
+			<a href="{{ route ('movies.index') }}" class="btn btn-success">Back</a>
 
 
 </div>
