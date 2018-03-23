@@ -7,6 +7,7 @@ use App\Movie;
 use App\Director;
 use App\Genre;
 use App\Actor;
+use App\Rating;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller

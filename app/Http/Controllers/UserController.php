@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Movie;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -46,7 +47,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-      return view('users.show', ['user' => $user]);
+        return view('users.show', ['user' => $user]);
     }
 
     /**
